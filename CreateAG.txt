@@ -1,1 +1,0 @@
-.\CreateAGInParallel.ps1 "zbsz1-xxxx-db1","zbsz1-xxxx-db2","zbbj1-xxxx-db1\zb" xxxxon sec,acct "\\zbsz1-xxxx-db1\G$\alwaysonbak\"
