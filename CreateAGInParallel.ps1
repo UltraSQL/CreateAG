@@ -11,17 +11,6 @@
 ===============================================================================================
 #>
 
-function Send-Mail
-([psobject]$MailCredential,$To,[string]$Body,[string]$Subject)
-{
- Send-MailMessage -To $To -Body $Body -Subject $Subject -Credential $MailCredential -From "xxxx@xxxx.com" -SmtpServer "10.0.10.1"`
- -Encoding ([System.Text.Encoding]::UTF8);
-}
-
-###########################################################
-# SCRIPT PARAMETERS 
-###########################################################
-
 Param
 (
     # Name of the server instances that will participate in the availability group.
@@ -40,11 +29,16 @@ Param
     [string] $BackupShare
 )
 
-###########################################################
-# SCRIPT BODY 
-###########################################################
-
+# Import module sqlps
 Import-Module SQLPS -DisableNameChecking
+
+# Define function send-mail
+function Send-Mail
+([psobject]$MailCredential,$To,[string]$Body,[string]$Subject)
+{
+ Send-MailMessage -To $To -Body $Body -Subject $Subject -Credential $MailCredential -From "xxxx@xxxx.com" -SmtpServer "10.0.10.1"`
+ -Encoding ([System.Text.Encoding]::UTF8);
+}
 
 # Initialize some collections
 $InstanceObjects = @()
