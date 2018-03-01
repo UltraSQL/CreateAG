@@ -51,7 +51,7 @@ $Key = (2,2,2,2,22,22,222,222,1,1,2,23,42,54,33,233,1,34,2,7,6,5,22,22)
 $Pwd = "76492d1116743f0423413b16050a5345MgB8AEYARwA3AEcASwA3AG0AUgBMAEUAdgByAEoANQAvAGsAbQBrAFYANABLAGcAPQA9AHwAZgA2AGQAYQA5ADQAYQA4ADIAMQAxADQAYgA4AGYAMwA1ADgAZgA0AGEAYwBjADkAZgBkADYAMQA5AGMAOQA5ADkAZgBjADgANgA3ADcANABkAGUAZAA4ADkAOQA2ADMAZgAyADkAMgA3ADcANQAzAGQAMgA4AGQAYQBlADUAMgA="
 $SecStr=ConvertTo-SecureString -String $Pwd -Key $Key;
 $Credential = New-Object -TypeName "System.Management.Automation.PSCredential" -ArgumentList $User, $SecStr
-$MailTo = "zzzzzzzz@xxxx.com;yyyyyyy@xxxx.com"
+$MailTo = @("Xu Changyong <xuchangyong@xxxx.com>","yyy yyy <yyyyyy@xxxx.com>")
 
 $StartTime = Get-Date
 
